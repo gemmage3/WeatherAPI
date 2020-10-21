@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from weather.views import index
+from weather.views import index, delete_city
 
 urlpatterns = [
 
-    path('', index, name ='index'),
+    path('', index, name ='home'),
+    path('delete/<city_name>/', delete_city, name='delete_city'),
     path('admin/', admin.site.urls),
 
 ]
